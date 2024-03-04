@@ -1,0 +1,26 @@
+<template>
+  <h2 class="css">测试{{ type }}文件是否<span>正常加载</span></h2>
+  <button @click="increment">count++</button>
+  <button @click="decrement">count--</button>
+</template>
+
+<script setup>
+import { useCounterStore } from '@/store'
+
+defineProps({
+  type: String
+})
+
+const counterStore = useCounterStore()
+const { increment, decrement } = counterStore
+</script>
+
+<style scoped>
+.css {
+  color: red;
+  span {
+    font-size: 30px;
+    color: blue;
+  }
+}
+</style>

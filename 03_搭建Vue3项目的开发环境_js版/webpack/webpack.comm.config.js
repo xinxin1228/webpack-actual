@@ -1,11 +1,12 @@
 const path = require('node:path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 /**
  * @type {import('webpack').Configuration}
  */
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   module: {
     rules: [
       {
@@ -29,19 +30,22 @@ module.exports = {
         }
       },
       {
-        test: /\.ts$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        test: /\.vue$/,
+        use: ['vue-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html')
-    })
+    }),
+    new VueLoaderPlugin()
   ],
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js'],
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    }
   },
   cache: {
     type: 'filesystem'
