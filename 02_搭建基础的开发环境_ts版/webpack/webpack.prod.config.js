@@ -8,7 +8,8 @@ module.exports = merge(webpackCommConfig, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'js/[name][fullhash:8].js',
+    filename: 'js/[name][contenthash:8].js',
+    chunkFilename: 'js/chunk-[name][contenthash:8].js',
     clean: true
   },
   module: {

@@ -1,0 +1,5 @@
+export { default as CssCom } from './CssCom.vue'
+export { default as LessCom } from './LessCom.vue'
+export { default as SassCom } from './SassCom.vue'
+export { default as ScssCom } from './ScssCom.vue'
+export { default as Layout } from './Layout.vue'
