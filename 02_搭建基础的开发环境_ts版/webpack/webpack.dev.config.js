@@ -4,7 +4,7 @@ const webpackCommConfig = require('./webpack.comm.config')
 module.exports = merge(webpackCommConfig, {
   mode: 'development',
   devServer: {
-    port: 8080,
+    port: 8000,
     hot: true
   },
   module: {

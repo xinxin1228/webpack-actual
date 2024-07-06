@@ -5,6 +5,7 @@ import './index.sass'
 import img1 from './img/01.jpg'
 import img2 from './img/02.jpg'
 import { str } from './hello'
+import { hi } from '@utils/hi'
 
 const sum = (...rest: number[]) => rest.reduce((a, b) => a + b)
 
@@ -19,3 +20,5 @@ function renderImage(url: string) {
 
   document.body.append(imgEl)
 }
+
+console.log('hi', hi)

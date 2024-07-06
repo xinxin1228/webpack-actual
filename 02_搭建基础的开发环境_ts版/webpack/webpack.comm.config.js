@@ -41,7 +41,10 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js', '.ts'],
+    alias: {
+      '@utils': path.resolve(__dirname, '../src/utils')
+    }
   },
   cache: {
     type: 'filesystem'
